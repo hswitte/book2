@@ -47,11 +47,16 @@ $('button#show').click(function(){
 
 $('button#setcolor').click(function(){    
     // TODO: set the background color of the viz window to the specified color
-    $('.myviz').css('background-color','TODO')
+    var color = $('input#setcolor').val()
+    $('.myviz').css('background-color',color)
 })
 
 // TODO: add an event handler for "Set Height" button to set the height of the
 // viz window to the specified value
+$('button#setheight').click(function(){
+	var h = $('input#setheight').val()
+	$('.myviz').height(h)
+})
 
 // TODO: add an event handler for "Show Bars (1)" to display a specified number of
 // vertical bars

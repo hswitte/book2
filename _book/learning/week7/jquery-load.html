@@ -56,7 +56,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.1.4" data-basepath="../.." data-revision="Wed Oct 07 2015 18:09:54 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="1.1.4" data-basepath="../.." data-revision="Fri Oct 09 2015 17:36:26 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -392,7 +392,14 @@
 
 // TODO: add an event handler for the &quot;Load FCQ&quot; button to load the FCQ dataset
 // into the memory, and display a message in the Viz box to indicate how many records
-// are loaded. The data is located in &apos;/data/fcq.clean.json&apos;</code></pre><script>var code ="$('button#load-pokemon').click(function(){    \r\n\r\n    $.get('/data/pokemon-small.json')\r\n     .success(function(data){\r\n         $('.myviz').html('number of records load:' + data.length)\r\n     })\r\n})\r\n\r\n// TODO: add an event handler for the \"Load FCQ\" button to load the FCQ dataset\r\n// into the memory, and display a message in the Viz box to indicate how many records\r\n// are loaded. The data is located in '/data/fcq.clean.json'"</script></p>
+// are loaded. The data is located in &apos;/data/fcq.clean.json&apos;
+
+$(&apos;button#load-fcq&apos;).click(function(){
+	$.get(&apos;/data/fcq.clean.json&apos;)
+	.success(function(data){
+	$(&apos;.myviz&apos;).html(&apos;fcq loaded; number of records: &apos; + data.length)
+	})
+})</code></pre><script>var code ="$('button#load-pokemon').click(function(){    \r\n\r\n    $.get('/data/pokemon-small.json')\r\n     .success(function(data){\r\n         $('.myviz').html('number of records load:' + data.length)\r\n     })\r\n})\r\n\r\n// TODO: add an event handler for the \"Load FCQ\" button to load the FCQ dataset\r\n// into the memory, and display a message in the Viz box to indicate how many records\r\n// are loaded. The data is located in '/data/fcq.clean.json'\r\n\r\n$('button#load-fcq').click(function(){\r\n\t$.get('/data/fcq.clean.json')\r\n\t.success(function(data){\r\n\t$('.myviz').html('fcq loaded; number of records: ' + data.length)\r\n\t})\r\n})"</script></p>
 
                     
                     </section>

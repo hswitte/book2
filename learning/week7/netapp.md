@@ -15,7 +15,7 @@ This report is prepared by
 * [Fadhil Suhendi](https://github.com/fadhilfath)
 * [Denis Kazakov](https://github.com/94kazakov)
 
-# How can the non-incrementing basetime bug be visualized?
+# How can the non-incrementing basetime bug be visualized? (by Heather)
 
 I wanted to visualize the relation between basetime and observation time. Given ideal data, this plot should create a diagonal line, where basetimes and observation times are almost perfectly correlated. With a plot of observation time on the x-axis and basetime on the y-axis, systems with non-incrementing basetimes would appear as horizontal stripes on this graph. 
 
@@ -38,28 +38,35 @@ Illinois:
 Kingston:
 ![screenshot](heather-kingston.png)
 
-# (Question)
+# How many of the delta times are "good"? Which SW releases and FW releases are responsible for "bad" delta times? (by Kari)
 
-(answer)
+Ideally delta times are near 24 hours. While it's possible to condsider delta times above or below 24 hours, the data may not be suspect. These charts allow the user to decide what delta times should be used, and which FW and SW vversions are causing the most "bad" delta times. 
 
-# (Question)
+This bar chart shows how many records there are for certain bins of time. The bin sizes vary in order to capture where the delta times are (and where they are not). Maybe more art than science!  The same bins are used in all three visualizations. The colors show that all 3 releases contribute to both good and bad delta times.
+![screenshot](bar_time_records.png)
+The next two charts attempt to determine how certain SW releases and Firmware releases contibute good and bad delta times.  The rows are sorted by total number of records for a given release, descending.
 
-(answer)
+The top row shows that 1 software version contributed the most bad delta times under 24 hours. But really all SW versions contributed bad delta times both less than and more than the ideal 24 hours.
+![screenshot](SW_delta.png)
+For firmware versions, the results are similar. The top 2 rows show 2 FW versions that contributed to low bad values. The third row is an FW version that contributes most of the bad high values.  The following rows show FW versions that produce a majority of good time values, but all versions produce bad delta times. 
+![screenshot](FW_delta.png)
 
-# (Question)
+# From the dataset, can we pinpoint when the so called software fix for the Base Time attribute was implemented? (by Zach)
 
-(answer)
+![screenshot](./week71.jpg)
+![screenshot](./week7_2.jpg)
 
-# (Question)
+# What is the duration of observation times? (by Denis)
 
-(answer)
+![screenshot](./hist.png)
+
+# Which software version has the delta time in range of 24 - 25 hours? (by Fadhil)
+
+![screenshot](./swversion.png)
 
 # Further Analysis
 
 Our team determines the following questions are too complex for Tableau and
 require custom scripts to be written.
 
-* (Question)
-* (Question)
-* (Question)
-* (Question)
+* Re-calculating delta times based on non-incrementing basetimes, and utilizing that calculation as a new statistic.
