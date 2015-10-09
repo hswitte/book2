@@ -56,7 +56,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.1.1" data-basepath="../.." data-revision="Wed Oct 07 2015 18:09:54 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="1.1.1" data-basepath="../.." data-revision="Fri Oct 09 2015 17:36:26 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -388,7 +388,7 @@ He shared a data problem for our class to help solve.</p>
 <li><a href="https://github.com/fadhilfath" target="_blank">Fadhil Suhendi</a></li>
 <li><a href="https://github.com/94kazakov" target="_blank">Denis Kazakov</a></li>
 </ul>
-<h1 id="how-can-the-non-incrementing-basetime-bug-be-visualized">How can the non-incrementing basetime bug be visualized?</h1>
+<h1 id="how-can-the-non-incrementing-basetime-bug-be-visualized-by-heather">How can the non-incrementing basetime bug be visualized? (by Heather)</h1>
 <p>I wanted to visualize the relation between basetime and observation time. Given ideal data, this plot should create a diagonal line, where basetimes and observation times are almost perfectly correlated. With a plot of observation time on the x-axis and basetime on the y-axis, systems with non-incrementing basetimes would appear as horizontal stripes on this graph. </p>
 <p>Here is the first plot I made, including all datapoints:
 <img src="heather-netapp1.png" alt="screenshot"></p>
@@ -402,22 +402,27 @@ He shared a data problem for our class to help solve.</p>
 <img src="heather-illinois.png" alt="screenshot"></p>
 <p>Kingston:
 <img src="heather-kingston.png" alt="screenshot"></p>
-<h1 id="-question">(Question)</h1>
-<p>(answer)</p>
-<h1 id="-question">(Question)</h1>
-<p>(answer)</p>
-<h1 id="-question">(Question)</h1>
-<p>(answer)</p>
-<h1 id="-question">(Question)</h1>
-<p>(answer)</p>
+<h1 id="how-many-of-the-delta-times-are-good-which-sw-releases-and-fw-releases-are-responsible-for-bad-delta-times-by-kari">How many of the delta times are &quot;good&quot;? Which SW releases and FW releases are responsible for &quot;bad&quot; delta times? (by Kari)</h1>
+<p>Ideally delta times are near 24 hours. While it&apos;s possible to condsider delta times above or below 24 hours, the data may not be suspect. These charts allow the user to decide what delta times should be used, and which FW and SW vversions are causing the most &quot;bad&quot; delta times. </p>
+<p>This bar chart shows how many records there are for certain bins of time. The bin sizes vary in order to capture where the delta times are (and where they are not). Maybe more art than science!  The same bins are used in all three visualizations. The colors show that all 3 releases contribute to both good and bad delta times.
+<img src="bar_time_records.png" alt="screenshot">
+The next two charts attempt to determine how certain SW releases and Firmware releases contibute good and bad delta times.  The rows are sorted by total number of records for a given release, descending.</p>
+<p>The top row shows that 1 software version contributed the most bad delta times under 24 hours. But really all SW versions contributed bad delta times both less than and more than the ideal 24 hours.
+<img src="SW_delta.png" alt="screenshot">
+For firmware versions, the results are similar. The top 2 rows show 2 FW versions that contributed to low bad values. The third row is an FW version that contributes most of the bad high values.  The following rows show FW versions that produce a majority of good time values, but all versions produce bad delta times. 
+<img src="FW_delta.png" alt="screenshot"></p>
+<h1 id="from-the-dataset-can-we-pinpoint-when-the-so-called-software-fix-for-the-base-time-attribute-was-implemented-by-zach">From the dataset, can we pinpoint when the so called software fix for the Base Time attribute was implemented? (by Zach)</h1>
+<p><img src="week71.jpg" alt="screenshot">
+<img src="week7_2.jpg" alt="screenshot"></p>
+<h1 id="what-is-the-duration-of-observation-times-by-denis">What is the duration of observation times? (by Denis)</h1>
+<p><img src="hist.png" alt="screenshot"></p>
+<h1 id="which-software-version-has-the-delta-time-in-range-of-24-25-hours-by-fadhil">Which software version has the delta time in range of 24 - 25 hours? (by Fadhil)</h1>
+<p><img src="swversion.png" alt="screenshot"></p>
 <h1 id="further-analysis">Further Analysis</h1>
 <p>Our team determines the following questions are too complex for Tableau and
 require custom scripts to be written.</p>
 <ul>
-<li>(Question)</li>
-<li>(Question)</li>
-<li>(Question)</li>
-<li>(Question)</li>
+<li>Re-calculating delta times based on non-incrementing basetimes, and utilizing that calculation as a new statistic.</li>
 </ul>
 
                     
