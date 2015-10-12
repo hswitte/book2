@@ -60,16 +60,38 @@ $('button#setheight').click(function(){
 
 // TODO: add an event handler for "Show Bars (1)" to display a specified number of
 // vertical bars
-$('button#bars1').click(function(){    
-    var svg = "<svg><rect height='50' width='10'/><rect height='50' width='10' x='20'/></svg>"
-    $('.myviz').html(svg)    
+$('button#bars1').click(function(){
+    var svg = "<svg>"
+    for (x=0; x < $('input#bars1-number').val(); x++) {
+        svg += "<rect height='50' width='10' x='" + x * 20 + "'/>"
+    }
+    svg += "</svg>"
+    $('.myviz').html(svg)
 })
+
 
 // TODO: add an event handler for "Show Bars (2)" to display a specified number of
 // vertical bars in the specified color
+$('button#bars2').click(function(){
+    var svg = "<svg>"
+    for (x=0; x < $('input#bars2-number').val(); x++) {
+        svg += "<rect height='50' width='10' x='" + x * 20 + "' style='fill:" + $('input#bars2-color').val() +  "'/>"
+    }
+    svg += "</svg>"
+    $('.myviz').html(svg)
+})
+
 
 // TODO: add an event handler for "Show Bars (3)" to display a specified number of
 // vertical bars in the specified color at the specified height
+$('button#bars3').click(function(){
+    var svg = "<svg>"
+    for (x=0; x < $('input#bars3-number').val(); x++) {
+        svg += "<rect height='"+ $('input#bars3-height').val() +"' width='10' x='" + x * 20 + "' style='fill:" + $('input#bars3-color').val() +  "'/>"
+    }
+    svg += "</svg>"
+    $('.myviz').html(svg)
+})
 
 
 {% endscript %}
