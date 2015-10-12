@@ -56,7 +56,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.1.3" data-basepath="../.." data-revision="Fri Oct 09 2015 17:36:26 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="1.1.3" data-basepath="../.." data-revision="Sun Oct 11 2015 18:45:18 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -426,16 +426,38 @@ $(&apos;button#setheight&apos;).click(function(){
 
 // TODO: add an event handler for &quot;Show Bars (1)&quot; to display a specified number of
 // vertical bars
-$(&apos;button#bars1&apos;).click(function(){    
-    var svg = &quot;&lt;svg&gt;&lt;rect height=&apos;50&apos; width=&apos;10&apos;/&gt;&lt;rect height=&apos;50&apos; width=&apos;10&apos; x=&apos;20&apos;/&gt;&lt;/svg&gt;&quot;
-    $(&apos;.myviz&apos;).html(svg)    
+$(&apos;button#bars1&apos;).click(function(){
+    var svg = &quot;&lt;svg&gt;&quot;
+    for (x=0; x &lt; $(&apos;input#bars1-number&apos;).val(); x++) {
+        svg += &quot;&lt;rect height=&apos;50&apos; width=&apos;10&apos; x=&apos;&quot; + x * 20 + &quot;&apos;/&gt;&quot;
+    }
+    svg += &quot;&lt;/svg&gt;&quot;
+    $(&apos;.myviz&apos;).html(svg)
 })
+
 
 // TODO: add an event handler for &quot;Show Bars (2)&quot; to display a specified number of
 // vertical bars in the specified color
+$(&apos;button#bars2&apos;).click(function(){
+    var svg = &quot;&lt;svg&gt;&quot;
+    for (x=0; x &lt; $(&apos;input#bars2-number&apos;).val(); x++) {
+        svg += &quot;&lt;rect height=&apos;50&apos; width=&apos;10&apos; x=&apos;&quot; + x * 20 + &quot;&apos; style=&apos;fill:&quot; + $(&apos;input#bars2-color&apos;).val() +  &quot;&apos;/&gt;&quot;
+    }
+    svg += &quot;&lt;/svg&gt;&quot;
+    $(&apos;.myviz&apos;).html(svg)
+})
+
 
 // TODO: add an event handler for &quot;Show Bars (3)&quot; to display a specified number of
-// vertical bars in the specified color at the specified height</code></pre><script>var code ="$('button#show').click(function(){    \r\n    var value = $('input#show').val()    \r\n    console.log(value)\r\n    $('.myviz').html(value)\r\n})\r\n\r\n$('button#setcolor').click(function(){    \r\n    // TODO: set the background color of the viz window to the specified color\r\n    var color = $('input#setcolor').val()\r\n    $('.myviz').css('background-color',color)\r\n})\r\n\r\n// TODO: add an event handler for \"Set Height\" button to set the height of the\r\n// viz window to the specified value\r\n$('button#setheight').click(function(){\r\n\tvar h = $('input#setheight').val()\r\n\t$('.myviz').height(h)\r\n})\r\n\r\n// TODO: add an event handler for \"Show Bars (1)\" to display a specified number of\r\n// vertical bars\r\n$('button#bars1').click(function(){    \r\n    var svg = \"<svg><rect height='50' width='10'/><rect height='50' width='10' x='20'/></svg>\"\r\n    $('.myviz').html(svg)    \r\n})\r\n\r\n// TODO: add an event handler for \"Show Bars (2)\" to display a specified number of\r\n// vertical bars in the specified color\r\n\r\n// TODO: add an event handler for \"Show Bars (3)\" to display a specified number of\r\n// vertical bars in the specified color at the specified height"</script></p>
+// vertical bars in the specified color at the specified height
+$(&apos;button#bars3&apos;).click(function(){
+    var svg = &quot;&lt;svg&gt;&quot;
+    for (x=0; x &lt; $(&apos;input#bars3-number&apos;).val(); x++) {
+        svg += &quot;&lt;rect height=&apos;&quot;+ $(&apos;input#bars3-height&apos;).val() +&quot;&apos; width=&apos;10&apos; x=&apos;&quot; + x * 20 + &quot;&apos; style=&apos;fill:&quot; + $(&apos;input#bars3-color&apos;).val() +  &quot;&apos;/&gt;&quot;
+    }
+    svg += &quot;&lt;/svg&gt;&quot;
+    $(&apos;.myviz&apos;).html(svg)
+})</code></pre><script>var code ="$('button#show').click(function(){    \r\n    var value = $('input#show').val()    \r\n    console.log(value)\r\n    $('.myviz').html(value)\r\n})\r\n\r\n$('button#setcolor').click(function(){    \r\n    // TODO: set the background color of the viz window to the specified color\r\n    var color = $('input#setcolor').val()\r\n    $('.myviz').css('background-color',color)\r\n})\r\n\r\n// TODO: add an event handler for \"Set Height\" button to set the height of the\r\n// viz window to the specified value\r\n$('button#setheight').click(function(){\r\n\tvar h = $('input#setheight').val()\r\n\t$('.myviz').height(h)\r\n})\r\n\r\n// TODO: add an event handler for \"Show Bars (1)\" to display a specified number of\r\n// vertical bars\r\n$('button#bars1').click(function(){\r\n    var svg = \"<svg>\"\r\n    for (x=0; x < $('input#bars1-number').val(); x++) {\r\n        svg += \"<rect height='50' width='10' x='\" + x * 20 + \"'/>\"\r\n    }\r\n    svg += \"</svg>\"\r\n    $('.myviz').html(svg)\r\n})\r\n\r\n\r\n// TODO: add an event handler for \"Show Bars (2)\" to display a specified number of\r\n// vertical bars in the specified color\r\n$('button#bars2').click(function(){\r\n    var svg = \"<svg>\"\r\n    for (x=0; x < $('input#bars2-number').val(); x++) {\r\n        svg += \"<rect height='50' width='10' x='\" + x * 20 + \"' style='fill:\" + $('input#bars2-color').val() +  \"'/>\"\r\n    }\r\n    svg += \"</svg>\"\r\n    $('.myviz').html(svg)\r\n})\r\n\r\n\r\n// TODO: add an event handler for \"Show Bars (3)\" to display a specified number of\r\n// vertical bars in the specified color at the specified height\r\n$('button#bars3').click(function(){\r\n    var svg = \"<svg>\"\r\n    for (x=0; x < $('input#bars3-number').val(); x++) {\r\n        svg += \"<rect height='\"+ $('input#bars3-height').val() +\"' width='10' x='\" + x * 20 + \"' style='fill:\" + $('input#bars3-color').val() +  \"'/>\"\r\n    }\r\n    svg += \"</svg>\"\r\n    $('.myviz').html(svg)\r\n})"</script></p>
 
                     
                     </section>
