@@ -3,17 +3,17 @@
 Pick one question class and build an exploratory visualization interface for it.
 The question class you pick must have at least three variables that can be changed.
 
-## (Question class)
+## For a state X and ambience Y, how many businesses are there at each star rating?
 
 <div style="border:1px grey solid; padding:5px;">
-    <div><h5>X</h5>
+    <div><h5>State: X</h5>
         <input id="arg1" type="text" value="something"/>
     </div>
-    <div><h5>Y</h5>
-        <input id="arg2" type="text" value="something"/>
+    <div><h5>Ambience: Y</h5>
+        <input id="arg2" type="text" value="something"/> ("intimate", "classy", "hipster", "divey", "touristy", "trendy", "upscale", "casual" )
     </div>
     <div><h5>Z</h5>
-        <input id="arg2" type="text" value="something"/>
+        <input id="arg3" type="text" value="descending"/> ("ascending", "descending")
     </div>    
     <div style="margin:20px;">
         <button id="viz">Vizualize</button>
@@ -65,7 +65,7 @@ function viz(arg1, arg2, arg3){
     }
 
     function computeWidth(d, i) {        
-        return i * 20 + 20
+        return d[1].length * 7
     }
 
     function computeY(d, i) {
@@ -77,14 +77,25 @@ function viz(arg1, arg2, arg3){
     }
 
     function computeLabel(d, i) {
-        return 'f' + i
+        return d[0]
     }
 
-    // TODO: modify the logic here based on your UI
-    // take the first 20 items to visualize    
-    items = _.take(items, 20)
+    var state = _.filter(items, function(d){
+        return (d.state == arg1 && d.attributes && d.attributes.Ambience && d.attributes.Ambience[arg2])
+        })
+    console.log('filter', state)
 
-    var viz = _.map(items, function(d, i){                
+    var groups = _.groupBy(state, "stars")
+    console.log('groups', groups)
+
+ 
+    var pairs = _.sortBy(_.pairs(groups), function(n){
+        return n[0]
+        })
+    console.log(arg3)
+    if (arg3 == 'descending') {pairs = pairs.reverse()}
+
+    var viz = _.map(pairs, function(d, i){                
                 return {
                     x: computeX(d, i),
                     y: computeY(d, i),
@@ -105,19 +116,20 @@ function viz(arg1, arg2, arg3){
 }
 
 $('button#viz').click(function(){    
-    var arg1 = 'TODO'
-    var arg2 = 'TODO'
-    var arg3 = 'TODO'    
+    var arg1 = $('input#arg1').val()
+    var arg2 = $('input#arg2').val()
+    var arg3 = $('input#arg3').val()   
     viz(arg1, arg2, arg3)
 })  
+
 
 {% endscript %}
 
 # Authors
 
 This UI is developed by
-* [Full name](link to github account)
-* [Full name](link to github account)
-* [Full name](link to github account)
-* [Full name](link to github account)
-* [Full name](link to github account)
+* [Kari Santos](https://github.com/karisantos)
+* [Heather Witte](https://github.com/hswitte)
+* [Zachary Lamb](https://github.com/ZachLamb)
+* [Fadhil Suhendi](https://github.com/fadhilfath)
+* [Denis Kazakov](https://github.com/94kazakov)

@@ -15,31 +15,31 @@ Three example of specific questions in this class are:
 Come up with five additional question classes. Each must have two or three
 variables.
 
-## (Question template)
+## Location
+Three example of specific questions in this class are:
+* Which locations have the most 'trendy' restaurants?
+* Which locations have the most 'hipster' restaurants?
+* Which locations have the most total yelp reviews?
+
+## Times of operation
 Three example of specific questions in this class are:
 * (specific question)
 * (specific question)
 * (specific question)
 
-## (Question template)
+## Correlation of number of reviews & number of stars
 Three example of specific questions in this class are:
 * (specific question)
 * (specific question)
 * (specific question)
 
-## (Question template)
+## Noise level
 Three example of specific questions in this class are:
-* (specific question)
-* (specific question)
-* (specific question)
+* Noise level vs. good for kids
+* Noise level vs. romantic
+* Are noise levels reviewed (i.e. present in the rating) for non-restaurant establishments
 
-## (Question template)
-Three example of specific questions in this class are:
-* (specific question)
-* (specific question)
-* (specific question)
-
-## (Question template)
+## Good for dancing
 Three example of specific questions in this class are:
 * (specific question)
 * (specific question)
